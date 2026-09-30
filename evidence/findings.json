@@ -1,0 +1,597 @@
+{
+  "findings": [
+    {
+      "id": "standard-login",
+      "ms": 106,
+      "url": "https://www.saucedemo.com/inventory.html",
+      "count": 6,
+      "cards": [
+        {
+          "name": "Sauce Labs Backpack",
+          "price": "$29.99",
+          "img": "/assets/sauce-backpack-1200x1500-CjRW-Djj.jpg",
+          "alt": "Sauce Labs Backpack",
+          "button": "Add to cart",
+          "titleTestId": "item-4-title-link",
+          "nameAlign": "start",
+          "buttonBox": {
+            "x": 500,
+            "y": 339,
+            "width": 160,
+            "height": 34,
+            "top": 339,
+            "right": 660,
+            "bottom": 373,
+            "left": 500
+          }
+        },
+        {
+          "name": "Sauce Labs Bike Light",
+          "price": "$9.99",
+          "img": "/assets/bike-light-1200x1500-DxcZRFOA.jpg",
+          "alt": "Sauce Labs Bike Light",
+          "button": "Add to cart",
+          "titleTestId": "item-0-title-link",
+          "nameAlign": "start",
+          "buttonBox": {
+            "x": 1055,
+            "y": 339,
+            "width": 160,
+            "height": 34,
+            "top": 339,
+            "right": 1215,
+            "bottom": 373,
+            "left": 1055
+          }
+        },
+        {
+          "name": "Sauce Labs Bolt T-Shirt",
+          "price": "$15.99",
+          "img": "/assets/bolt-shirt-1200x1500-mR0ldpVS.jpg",
+          "alt": "Sauce Labs Bolt T-Shirt",
+          "button": "Add to cart",
+          "titleTestId": "item-1-title-link",
+          "nameAlign": "start",
+          "buttonBox": {
+            "x": 500,
+            "y": 591,
+            "width": 160,
+            "height": 34,
+            "top": 591,
+            "right": 660,
+            "bottom": 625,
+            "left": 500
+          }
+        },
+        {
+          "name": "Sauce Labs Fleece Jacket",
+          "price": "$49.99",
+          "img": "/assets/sauce-pullover-1200x1500-BfbI-PSd.jpg",
+          "alt": "Sauce Labs Fleece Jacket",
+          "button": "Add to cart",
+          "titleTestId": "item-5-title-link",
+          "nameAlign": "start",
+          "buttonBox": {
+            "x": 1055,
+            "y": 591,
+            "width": 160,
+            "height": 34,
+            "top": 591,
+            "right": 1215,
+            "bottom": 625,
+            "left": 1055
+          }
+        },
+        {
+          "name": "Sauce Labs Onesie",
+          "price": "$7.99",
+          "img": "/assets/red-onesie-1200x1500-BrSuq0ic.jpg",
+          "alt": "Sauce Labs Onesie",
+          "button": "Add to cart",
+          "titleTestId": "item-2-title-link",
+          "nameAlign": "start",
+          "buttonBox": {
+            "x": 500,
+            "y": 843,
+            "width": 160,
+            "height": 34,
+            "top": 843,
+            "right": 660,
+            "bottom": 877,
+            "left": 500
+          }
+        },
+        {
+          "name": "Test.allTheThings() T-Shirt (Red)",
+          "price": "$15.99",
+          "img": "/assets/red-tatt-1200x1500-E-qp6aYf.jpg",
+          "alt": "Test.allTheThings() T-Shirt (Red)",
+          "button": "Add to cart",
+          "titleTestId": "item-3-title-link",
+          "nameAlign": "start",
+          "buttonBox": {
+            "x": 1055,
+            "y": 843,
+            "width": 160,
+            "height": 34,
+            "top": 843,
+            "right": 1215,
+            "bottom": 877,
+            "left": 1055
+          }
+        }
+      ]
+    },
+    {
+      "id": "standard-default-sort-az",
+      "names": [
+        "Sauce Labs Backpack",
+        "Sauce Labs Bike Light",
+        "Sauce Labs Bolt T-Shirt",
+        "Sauce Labs Fleece Jacket",
+        "Sauce Labs Onesie",
+        "Test.allTheThings() T-Shirt (Red)"
+      ],
+      "isAz": true
+    },
+    {
+      "id": "standard-sort-za",
+      "za": [
+        "Test.allTheThings() T-Shirt (Red)",
+        "Sauce Labs Onesie",
+        "Sauce Labs Fleece Jacket",
+        "Sauce Labs Bolt T-Shirt",
+        "Sauce Labs Bike Light",
+        "Sauce Labs Backpack"
+      ],
+      "zaExpected": [
+        "Test.allTheThings() T-Shirt (Red)",
+        "Sauce Labs Onesie",
+        "Sauce Labs Fleece Jacket",
+        "Sauce Labs Bolt T-Shirt",
+        "Sauce Labs Bike Light",
+        "Sauce Labs Backpack"
+      ],
+      "ok": true
+    },
+    {
+      "id": "standard-sort-lohi",
+      "lohi": [
+        "$7.99",
+        "$9.99",
+        "$15.99",
+        "$15.99",
+        "$29.99",
+        "$49.99"
+      ]
+    },
+    {
+      "id": "standard-cart",
+      "badge": "2",
+      "cartNames": [
+        "Sauce Labs Backpack",
+        "Sauce Labs Bike Light"
+      ],
+      "cartPrices": [
+        "$29.99",
+        "$9.99"
+      ]
+    },
+    {
+      "id": "standard-empty-info",
+      "requiredError": "Error: First Name is required"
+    },
+    {
+      "id": "standard-overview",
+      "fieldValues": {
+        "first": "Momina",
+        "last": "Khan",
+        "postal": "54000"
+      },
+      "summary": {
+        "subtotal": "Item total: $39.98",
+        "tax": "Tax: $3.20",
+        "total": "Total: $43.18",
+        "payment": "SauceCard #31337"
+      }
+    },
+    {
+      "id": "standard-complete",
+      "complete": "Thank you for your order!",
+      "cartAfter": 0,
+      "url": "https://www.saucedemo.com/cart.html"
+    },
+    {
+      "id": "empty-cart-checkout",
+      "onInfo": "https://www.saucedemo.com/checkout-step-one.html",
+      "summary": {
+        "subtotal": "Item total: $0",
+        "tax": "Tax: $0.00",
+        "total": "Total: $0.00",
+        "items": 0
+      },
+      "finished": "Thank you for your order!",
+      "url": "https://www.saucedemo.com/checkout-complete.html"
+    },
+    {
+      "id": "cross-user-cart",
+      "storageAfterLogout": {
+        "cart": "[4]",
+        "cookies": ""
+      },
+      "badge": "1",
+      "names": [
+        "Sauce Labs Backpack"
+      ]
+    },
+    {
+      "id": "session-after-logout",
+      "afterBack": {
+        "url": "https://www.saucedemo.com/",
+        "inventoryVisible": 0,
+        "loginVisible": 1
+      },
+      "direct": {
+        "url": "https://www.saucedemo.com/",
+        "error": "Epic sadface: You can only access '/inventory.html' when you are logged in.",
+        "inventoryVisible": 0
+      }
+    },
+    {
+      "id": "problem-inventory",
+      "images": [
+        {
+          "name": "Sauce Labs Backpack",
+          "img": "/assets/sl-404-Cq1a9k9X.jpg"
+        },
+        {
+          "name": "Sauce Labs Bike Light",
+          "img": "/assets/sl-404-Cq1a9k9X.jpg"
+        },
+        {
+          "name": "Sauce Labs Bolt T-Shirt",
+          "img": "/assets/sl-404-Cq1a9k9X.jpg"
+        },
+        {
+          "name": "Sauce Labs Fleece Jacket",
+          "img": "/assets/sl-404-Cq1a9k9X.jpg"
+        },
+        {
+          "name": "Sauce Labs Onesie",
+          "img": "/assets/sl-404-Cq1a9k9X.jpg"
+        },
+        {
+          "name": "Test.allTheThings() T-Shirt (Red)",
+          "img": "/assets/sl-404-Cq1a9k9X.jpg"
+        }
+      ],
+      "uniqueImages": [
+        "/assets/sl-404-Cq1a9k9X.jpg"
+      ]
+    },
+    {
+      "id": "problem-sort",
+      "beforeSort": [
+        "Sauce Labs Backpack",
+        "Sauce Labs Bike Light",
+        "Sauce Labs Bolt T-Shirt",
+        "Sauce Labs Fleece Jacket",
+        "Sauce Labs Onesie",
+        "Test.allTheThings() T-Shirt (Red)"
+      ],
+      "afterSort": [
+        "Sauce Labs Backpack",
+        "Sauce Labs Bike Light",
+        "Sauce Labs Bolt T-Shirt",
+        "Sauce Labs Fleece Jacket",
+        "Sauce Labs Onesie",
+        "Test.allTheThings() T-Shirt (Red)"
+      ],
+      "changed": false
+    },
+    {
+      "id": "problem-add",
+      "addResults": [
+        {
+          "name": "Sauce Labs Backpack",
+          "badge": "1",
+          "stillShowsAdd": false,
+          "newErrors": []
+        },
+        {
+          "name": "Sauce Labs Bike Light",
+          "badge": "2",
+          "stillShowsAdd": false,
+          "newErrors": []
+        },
+        {
+          "name": "Sauce Labs Bolt T-Shirt",
+          "badge": "2",
+          "stillShowsAdd": true,
+          "newErrors": []
+        },
+        {
+          "name": "Sauce Labs Fleece Jacket",
+          "badge": "2",
+          "stillShowsAdd": true,
+          "newErrors": []
+        },
+        {
+          "name": "Sauce Labs Onesie",
+          "badge": "3",
+          "stillShowsAdd": false,
+          "newErrors": []
+        },
+        {
+          "name": "Test.allTheThings() T-Shirt (Red)",
+          "badge": "3",
+          "stillShowsAdd": true,
+          "newErrors": []
+        }
+      ],
+      "cartNames": [
+        "Sauce Labs Backpack",
+        "Sauce Labs Bike Light",
+        "Sauce Labs Onesie"
+      ]
+    },
+    {
+      "id": "problem-links",
+      "linkResults": [
+        {
+          "from": "Sauce Labs Backpack",
+          "url": "https://www.saucedemo.com/inventory-item.html?id=5",
+          "detailName": "Sauce Labs Fleece Jacket",
+          "detailPrice": "$49.99",
+          "detailImg": "/assets/sauce-pullover-1200x1500-BfbI-PSd.jpg"
+        },
+        {
+          "from": "Sauce Labs Bike Light",
+          "url": "https://www.saucedemo.com/inventory-item.html?id=1",
+          "detailName": "Sauce Labs Bolt T-Shirt",
+          "detailPrice": "$15.99",
+          "detailImg": "/assets/bolt-shirt-1200x1500-mR0ldpVS.jpg"
+        },
+        {
+          "from": "Sauce Labs Bolt T-Shirt",
+          "url": "https://www.saucedemo.com/inventory-item.html?id=2",
+          "detailName": "Sauce Labs Onesie",
+          "detailPrice": "$7.99",
+          "detailImg": "/assets/red-onesie-1200x1500-BrSuq0ic.jpg"
+        },
+        {
+          "from": "Sauce Labs Fleece Jacket",
+          "url": "https://www.saucedemo.com/inventory-item.html?id=6",
+          "detailName": "ITEM NOT FOUND",
+          "detailPrice": "$√-1",
+          "detailImg": "/assets/sl-404-Cq1a9k9X.jpg"
+        },
+        {
+          "from": "Sauce Labs Onesie",
+          "url": "https://www.saucedemo.com/inventory-item.html?id=3",
+          "detailName": "Test.allTheThings() T-Shirt (Red)",
+          "detailPrice": "$15.99",
+          "detailImg": "/assets/red-tatt-1200x1500-E-qp6aYf.jpg"
+        },
+        {
+          "from": "Test.allTheThings() T-Shirt (Red)",
+          "url": "https://www.saucedemo.com/inventory-item.html?id=4",
+          "detailName": "Sauce Labs Backpack",
+          "detailPrice": "$29.99",
+          "detailImg": "/assets/sauce-backpack-1200x1500-CjRW-Djj.jpg"
+        }
+      ]
+    },
+    {
+      "id": "error-sort",
+      "namesAfter": [
+        "Sauce Labs Backpack",
+        "Sauce Labs Bike Light",
+        "Sauce Labs Bolt T-Shirt",
+        "Sauce Labs Fleece Jacket",
+        "Sauce Labs Onesie",
+        "Test.allTheThings() T-Shirt (Red)"
+      ],
+      "dialogsOrErrors": [
+        "DIALOG: Sorting is broken! This error has been reported to Backtrace."
+      ]
+    },
+    {
+      "id": "error-add",
+      "addResults": [
+        {
+          "name": "Sauce Labs Backpack",
+          "badge": "1",
+          "stillAdd": false,
+          "errors": []
+        },
+        {
+          "name": "Sauce Labs Bike Light",
+          "badge": "2",
+          "stillAdd": false,
+          "errors": []
+        },
+        {
+          "name": "Sauce Labs Bolt T-Shirt",
+          "badge": "2",
+          "stillAdd": true,
+          "errors": [
+            "Error: Failed to add item to the cart."
+          ]
+        },
+        {
+          "name": "Sauce Labs Fleece Jacket",
+          "badge": "2",
+          "stillAdd": true,
+          "errors": [
+            "Error: Failed to add item to the cart."
+          ]
+        },
+        {
+          "name": "Sauce Labs Onesie",
+          "badge": "3",
+          "stillAdd": false,
+          "errors": []
+        },
+        {
+          "name": "Test.allTheThings() T-Shirt (Red)",
+          "badge": "3",
+          "stillAdd": true,
+          "errors": [
+            "Error: Failed to add item to the cart."
+          ]
+        }
+      ],
+      "cartNames": [
+        "Sauce Labs Backpack",
+        "Sauce Labs Bike Light",
+        "Sauce Labs Bolt T-Shirt",
+        "Sauce Labs Fleece Jacket",
+        "Sauce Labs Onesie",
+        "Test.allTheThings() T-Shirt (Red)"
+      ],
+      "pageErrors": [
+        "DIALOG: Sorting is broken! This error has been reported to Backtrace.",
+        "Error: Failed to add item to the cart.",
+        "Error: Failed to add item to the cart.",
+        "Error: Failed to add item to the cart.",
+        "TypeError: Cannot read properties of undefined (reading 'value')",
+        "TypeError: Cannot read properties of undefined (reading 'value')",
+        "TypeError: Cannot read properties of undefined (reading 'value')",
+        "TypeError: Cannot read properties of undefined (reading 'value')",
+        "TypeError: La.cesetRart is not a function"
+      ]
+    },
+    {
+      "id": "error-checkout",
+      "fields": {
+        "first": "Err",
+        "last": ""
+      },
+      "lastNameErrors": [
+        "TypeError: Cannot read properties of undefined (reading 'value')",
+        "TypeError: Cannot read properties of undefined (reading 'value')",
+        "TypeError: Cannot read properties of undefined (reading 'value')",
+        "TypeError: Cannot read properties of undefined (reading 'value')",
+        "TypeError: La.cesetRart is not a function"
+      ],
+      "finishResult": {
+        "stepUrl": "https://www.saucedemo.com/checkout-step-two.html",
+        "summary": "Total: $51.81",
+        "complete": null,
+        "errors": [
+          "TypeError: La.cesetRart is not a function"
+        ],
+        "url": "https://www.saucedemo.com/checkout-step-two.html"
+      }
+    },
+    {
+      "id": "visual-prices",
+      "first": [
+        {
+          "name": "Sauce Labs Backpack",
+          "price": "$99.33",
+          "img": "/assets/sl-404-Cq1a9k9X.jpg",
+          "align": "start"
+        },
+        {
+          "name": "Sauce Labs Bike Light",
+          "price": "$37.51",
+          "img": "/assets/bike-light-1200x1500-DxcZRFOA.jpg",
+          "align": "start"
+        },
+        {
+          "name": "Sauce Labs Bolt T-Shirt",
+          "price": "$80.11",
+          "img": "/assets/bolt-shirt-1200x1500-mR0ldpVS.jpg",
+          "align": "right"
+        },
+        {
+          "name": "Sauce Labs Fleece Jacket",
+          "price": "$19.76",
+          "img": "/assets/sauce-pullover-1200x1500-BfbI-PSd.jpg",
+          "align": "right"
+        },
+        {
+          "name": "Sauce Labs Onesie",
+          "price": "$85.48",
+          "img": "/assets/red-onesie-1200x1500-BrSuq0ic.jpg",
+          "align": "start"
+        },
+        {
+          "name": "Test.allTheThings() T-Shirt (Red)",
+          "price": "$13.95",
+          "img": "/assets/red-tatt-1200x1500-E-qp6aYf.jpg",
+          "align": "start"
+        }
+      ],
+      "second": [
+        {
+          "name": "Sauce Labs Backpack",
+          "price": "$77.88",
+          "img": "/assets/sl-404-Cq1a9k9X.jpg"
+        },
+        {
+          "name": "Sauce Labs Bike Light",
+          "price": "$85.18",
+          "img": "/assets/bike-light-1200x1500-DxcZRFOA.jpg"
+        },
+        {
+          "name": "Sauce Labs Bolt T-Shirt",
+          "price": "$4.73",
+          "img": "/assets/bolt-shirt-1200x1500-mR0ldpVS.jpg"
+        },
+        {
+          "name": "Sauce Labs Fleece Jacket",
+          "price": "$13.96",
+          "img": "/assets/sauce-pullover-1200x1500-BfbI-PSd.jpg"
+        },
+        {
+          "name": "Sauce Labs Onesie",
+          "price": "$5.38",
+          "img": "/assets/red-onesie-1200x1500-BrSuq0ic.jpg"
+        },
+        {
+          "name": "Test.allTheThings() T-Shirt (Red)",
+          "price": "$31.74",
+          "img": "/assets/red-tatt-1200x1500-E-qp6aYf.jpg"
+        }
+      ],
+      "pricesChanged": true
+    },
+    {
+      "id": "visual-cart-price",
+      "catalogPrice": "$99.33",
+      "cartPrice": "$29.99",
+      "checkoutClass": "btn btn_action btn_medium checkout_button btn_visual_failure",
+      "checkoutBox": {
+        "x": 1220,
+        "y": 0,
+        "width": 220,
+        "height": 32
+      }
+    },
+    {
+      "id": "performance",
+      "ms": 5085,
+      "url": "https://www.saucedemo.com/inventory.html",
+      "inventoryShown": 1
+    },
+    {
+      "id": "locked-out",
+      "error": "Epic sadface: Sorry, this user has been locked out.",
+      "url": "https://www.saucedemo.com/"
+    }
+  ],
+  "pageErrors": [
+    "DIALOG: Sorting is broken! This error has been reported to Backtrace.",
+    "Error: Failed to add item to the cart.",
+    "Error: Failed to add item to the cart.",
+    "Error: Failed to add item to the cart.",
+    "TypeError: Cannot read properties of undefined (reading 'value')",
+    "TypeError: Cannot read properties of undefined (reading 'value')",
+    "TypeError: Cannot read properties of undefined (reading 'value')",
+    "TypeError: Cannot read properties of undefined (reading 'value')",
+    "TypeError: La.cesetRart is not a function"
+  ]
+}
