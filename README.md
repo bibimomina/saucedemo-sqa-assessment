@@ -1,6 +1,6 @@
 # SauceDemo checkout test
 
-https://github.com/Hammadwakeel/saucedemo-sqa-assessment
+https://github.com/bibimomina/saucedemo-sqa-assessment
 
 End-to-end check for the primary SauceDemo account: log in as `standard_user`, add a backpack and a bike light, prove checkout rejects an empty form, then complete the order and prove the cart is empty.
 

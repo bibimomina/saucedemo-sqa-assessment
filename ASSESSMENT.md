@@ -1,11 +1,12 @@
 # SQA Engineer assessment — SauceDemo
 
+Prepared by: Mominah
 Application: https://www.saucedemo.com/
 Primary account: `standard_user` / `secret_sauce`
 Tested: 1 October 2026
 Exploratory browser: Chromium 153, viewport 1440×900, driven with Playwright so each check could be repeated
 Automated test: Playwright Test, Desktop Chrome, fresh context per run (passed twice)
-Repository: https://github.com/Hammadwakeel/saucedemo-sqa-assessment
+Repository: https://github.com/bibimomina/saucedemo-sqa-assessment
 
 The six usernames on the login page were all exercised. Only behaviour that was reproduced on the live site is reported below. The public Sauce Labs sample-app source was used to form hypotheses. It was not treated as proof until the same failure showed up in the UI or the console.
 
@@ -88,9 +89,9 @@ Five prompts were used. Each one was a question with a decision after it, not a 
 
 Ranked by user impact, then likelihood on a shared browser. Five are filed. Further confirmed issues are listed after them, with the reason they did not take a slot.
 
-Severity: Critical means the purchase cannot be completed or the price is impossible. High means the wrong goods or the wrong person's cart. Medium means a real rule break with a smaller blast radius.
+Severity is the harm to the shopper or the business. Priority is how soon it should be fixed. Critical means the purchase cannot be completed or the price is impossible. High means the wrong goods or another person's cart. Medium means a real rule break with a smaller blast radius.
 
-### DEF-001 — Cart survives logout and is given to the next account
+### DEF-001 — Cart is not isolated to the logged-in session
 
 | | |
 |---|---|
@@ -108,11 +109,11 @@ Severity: Critical means the purchase cannot be completed or the price is imposs
 4. Log in as `visual_user` / `secret_sauce`.
 5. Open the cart.
 
-**Expected.** The new session starts with an empty cart. Logging out ends that shopper's basket as well as their session.
+**Expected.** Logging out ends that shopper's session and that shopper's basket. The next account in the same browser starts with an empty cart.
 
-**Actual.** Logout clears the session cookie. It leaves `localStorage["cart-contents"]` set to `[4]`. `visual_user` opens the cart and sees Sauce Labs Backpack at $29.99, with the badge showing 1. That price is the real backpack price. `visual_user` did not add the item, and their own shelf prices are random (DEF-004), so this line is the previous shopper's cart. The Checkout button drawn over the header in the same screenshot is DEF-004, not this bug.
+**Actual.** This is a cross-account session isolation failure, not ordinary "remember my cart" behaviour. Logout clears the session cookie and leaves `localStorage["cart-contents"]` set to `[4]`. The cart is not stored against the username. `visual_user` then sees Sauce Labs Backpack at $29.99, with the badge on 1. That is the real backpack price, and `visual_user` did not add it, so the line belongs to the previous session.
 
-**Impact.** On a shared computer the next person inherits the previous basket and can check it out. The previous shopper's intent is also visible. This is not limited to the "broken" accounts. It happens on the primary account.
+**Impact.** On a shared computer the next person inherits the previous basket and can check it out. What the previous shopper was about to buy is also visible. It happens on the primary account, not only on the broken personas.
 
 ### DEF-002 — problem_user cannot enter a last name, so checkout never completes
 
@@ -176,7 +177,7 @@ Severity: Critical means the purchase cannot be completed or the price is imposs
 
 ![Shelf prices that do not match the catalog, including a $99.33 backpack](evidence/22-visual-inventory.png)
 
-![Same backpack in the cart at the real price of $29.99, with Checkout pinned to the header](evidence/23-visual-cart.png)
+![Same backpack in the cart at the real catalog price of $29.99](evidence/23-visual-cart.png)
 
 **Steps**
 
@@ -187,9 +188,9 @@ Severity: Critical means the purchase cannot be completed or the price is imposs
 
 **Expected.** The backpack keeps a stable shelf price, and the cart shows that same price ($29.99).
 
-**Actual.** First load showed the backpack at **$99.33**. After reload the same card showed **$77.88**. The cart charged **$29.99**. Every other shelf price also changed across the reload (bike light $37.51 then $85.18, bolt T-shirt $80.11 then $4.73, fleece $19.76 then $13.96, onesie $85.48 then $5.38, red T-shirt $13.95 then $31.74). The backpack image on the shelf is the broken dog image, not the backpack. On the cart page, Checkout is not beside Continue Shopping. It is drawn over the header at the top right (`btn_visual_failure`, top of the viewport).
+**Actual.** First load showed the backpack at **$99.33**. After reload the same card showed **$77.88**. The cart charged **$29.99**. Every other shelf price also changed across the reload (bike light $37.51 then $85.18, bolt T-shirt $80.11 then $4.73, fleece $19.76 then $13.96, onesie $85.48 then $5.38, red T-shirt $13.95 then $31.74). The backpack image on the shelf is the broken dog image, not the backpack.
 
-**Impact.** The customer cannot tell what they will pay, and a refresh changes the advertised price. The amount in the cart is the real catalog price, so the shelf is false. The Checkout control is also easy to miss or to hit while aiming for the cart icon.
+**Impact.** The customer cannot tell what they will pay, and a refresh changes the advertised price. The amount in the cart is the real catalog price, so the shelf price is false.
 
 ### DEF-005 — problem_user product titles open a different product
 
@@ -228,6 +229,7 @@ These were reproduced. They are listed so the ranking is visible, not to pad the
 | `error_user`: choosing a sort shows `Sorting is broken! This error has been reported to Backtrace.` and the order does not change. | Real, and noisy, but DEF-003 already stops the payment. |
 | `standard_user` can check out with an empty cart. Overview says item total $0, tax $0.00, total $0.00, and Finish still shows the thank-you page. Evidence: `evidence/07-empty-cart-complete.png`. | Medium / P2. No payment is captured on this demo, so the harm is a false order rather than a wrong charge. It is also why the automated test must not treat the thank-you string as proof. |
 | `performance_glitch_user` takes about 5.1 seconds from Login to the inventory page (measured 5085 ms), then the catalog works. | The delay is real and it blocks the main thread, but it is confined to the account whose name describes it, and the purchase path still completes. I would track it as a performance budget if that account were a real segment. I would not put it ahead of a checkout that cannot finish. |
+| `visual_user`: the Checkout button is drawn over the header (`btn_visual_failure`, top of the viewport) instead of beside Continue Shopping. Visible on `evidence/23-visual-cart.png`. | Separate from DEF-004. The button still works. The false shelf price is the purchase-trust failure, so the layout bug did not take one of the five slots. |
 
 ### Checked, and not defects
 
